@@ -3,10 +3,20 @@
 The purpose of this repo is to provide a well tested basic python implementation of levenshein / WER so it can be shared across projects.
 It's based on [this](http://hetland.org/coding/python/levenshtein.py) with a couple of minor changes.
 
+
+## Getting Started
+ 1. Install with: `pip install simplepythonwer`
+ 2. Import with: `from simplepythonwer import wer`
+ 3. Use with:
+```python
+>>> wer("the cat sat on the mat", "the mat sat on the cat")
+0.3333333333333333
+```
+
 ## Features
  - Simple, minimal and only in python with 0 external dependencies
  - It is versioned and can be pip installed
- - Provide examples with tests to ensure it's working correctly
+ - Provide examples with [tests](test/test_wer.py) to ensure it's working correctly
 
 ## Caveats and Gotchas
  - Providing an empty string or filled with whitespace ground-truth will intentionally raise a divide by zero.
@@ -17,6 +27,7 @@ It's based on [this](http://hetland.org/coding/python/levenshtein.py) with a cou
 
 ## Change Log
  - v1.0.0 - First release - Minor ~15% speed improvements compared to original 
+ - v1.0.1 - Fixed pip packaging and added install steps. Exclude tests from pip
 
 
 ## Tests
@@ -34,7 +45,7 @@ OK
 
 ##  Speed Improvements
 ```python
-from SimplePythonWER.SimplePythonWER import *
+from simplepythonwer.simplepythonwer import *
 import timeit
 sentence = "the cat sat on the mat"*5
 print(timeit.timeit('levenshtein(sentence, sentence[::-1])', number=10000, globals=globals()))

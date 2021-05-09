@@ -42,12 +42,10 @@ def wer(ground_truth: str, result: str) -> float:
     return levenshtein(original, result) / float(len(original))
 
 
-def ler(original, result):
+def ler(ground_truth: str, result: str) -> float:
     r"""
     as above but not splitting on word
     """
-    # The WER ist calculated on word (and NOT on character) level.
-    # Therefore we split the strings into words first:
-    return levenshtein(original, result) / float(len(original))
+    return levenshtein(ground_truth, result) / float(len(ground_truth))
 
 

@@ -1,5 +1,5 @@
 import unittest
-from SimplePythonWER.SimplePythonWER import wer, ler
+from simplepythonwer.simplepythonwer import wer, ler
 
 
 class TestWERMethod(unittest.TestCase):
