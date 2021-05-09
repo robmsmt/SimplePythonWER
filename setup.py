@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0.1",
     author="Rob Smith",
     author_email="robmsmt@gmail.com",
-    description="A small basic python implementation of levenshein",
+    description="A small basic python implementation of WER (word error rate) and levenshtein",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/robmsmt/SimplePythonWER",

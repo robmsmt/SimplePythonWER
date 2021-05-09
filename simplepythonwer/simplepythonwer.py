@@ -29,22 +29,22 @@ def levenshtein(ground_truth: List[str], result: List[str]) -> int:
 
 def wer(ground_truth: str, result: str) -> float:
     r"""
+    src: https://github.com/mozilla/DeepSpeech :
     The WER is defined as the editing/Levenshtein distance on word level
     divided by the amount of words in the original text.
     In case of the original having more words (N) than the result and both
     being totally different (all N words resulting in 1 edit operation each),
     the WER will always be 1 (N / N = 1).
     """
-    # The WER is calculated on word (and NOT on character) level.
-    # Therefore we split the strings into words first:
-    original = ground_truth.split()
-    result = result.split()
-    return levenshtein(original, result) / float(len(original))
+    gt_list = ground_truth.split()
+    return levenshtein(gt_list, result.split()) / float(len(gt_list))
 
 
 def ler(ground_truth: str, result: str) -> float:
     r"""
-    as above but not splitting on word
+    LER (label error rate) or sometimes called CER (character error rate)
+    as above but not splitting on whitespace to have a list containing each word.
+    The strings are fed into levenshtein without splitting on whitespace.
     """
     return levenshtein(ground_truth, result) / float(len(ground_truth))
 
