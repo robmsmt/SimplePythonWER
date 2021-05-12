@@ -47,5 +47,3 @@ def ler(ground_truth: str, result: str) -> float:
     The strings are fed into levenshtein without splitting on whitespace.
     """
     return levenshtein(ground_truth, result) / float(len(ground_truth))
-
-

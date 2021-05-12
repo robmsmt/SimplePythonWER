@@ -28,6 +28,7 @@ It's based on [this](http://hetland.org/coding/python/levenshtein.py) with a cou
 ## Change Log
  - v1.0.0 - First release - Minor ~15% speed improvements compared to original 
  - v1.0.1 - Fixed pip packaging and added install steps. Exclude tests from pip
+ - v1.0.2 - Fixed pip packaging issue
 
 
 ## Tests
