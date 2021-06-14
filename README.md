@@ -19,7 +19,6 @@ It's based on [this](http://hetland.org/coding/python/levenshtein.py) with a cou
  - Provide examples with [tests](test/test_wer.py) to ensure it's working correctly
 
 ## Caveats and Gotchas
- - Providing an empty string or filled with whitespace ground-truth will intentionally raise a divide by zero.
  - It's possible to have greater than 100% WER if the ASR result is many times larger than the ground-truth, this is normal. 
    It's sometimes a good idea to cap the results at a 100% with min function e.g.
    ` min(wer(ground_truth, new_asr_string), 1.0)`, otherwise you could be exposed to unlimited error rate that could skew your averages.
