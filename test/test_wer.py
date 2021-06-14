@@ -4,9 +4,15 @@ from simplepythonwer.simplepythonwer import wer, ler
 
 class TestWERMethod(unittest.TestCase):
 
-    # 0. empty - if ground_truth is empty we will get dev by 0 error
-    def test_string_empty(self):
-        self.assertRaises(ZeroDivisionError, lambda :wer('  ', ' '))
+    # -1. empty ground-truth -
+    def test_empty_gt(self):
+        # self.assertRaises(ZeroDivisionError, lambda :wer('  ', ' cat sat '))
+        # if gt has at least some char then
+        self.assertEqual(wer('  ', ' cat sat '), 2.0)
+        self.assertEqual(wer('', ' cat sat '), 2.0)
+
+    # 0. empty str
+    def test_string_empty_asr(self):
         # if gt has at least some char then
         self.assertEqual(wer(" _ ", " "), 1.0)
         self.assertEqual(wer(" _ ", " "*5), 1.0)

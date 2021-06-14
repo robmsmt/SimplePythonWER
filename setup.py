@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="simplepythonwer",
-    version="1.0.2",
+    version="1.0.3",
     author="Rob Smith",
     author_email="robmsmt@gmail.com",
     description="A small basic python implementation of WER (word error rate) and levenshtein",

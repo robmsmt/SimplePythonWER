@@ -36,7 +36,8 @@ def wer(ground_truth: str, result: str) -> float:
     being totally different (all N words resulting in 1 edit operation each),
     the WER will always be 1 (N / N = 1).
     """
-    gt_list = ground_truth.split()
+    gt_split = ground_truth.split()
+    gt_list = gt_split if len(gt_split) > 0 else [' ']
     return levenshtein(gt_list, result.split()) / float(len(gt_list))
 
 

@@ -29,6 +29,7 @@ It's based on [this](http://hetland.org/coding/python/levenshtein.py) with a cou
  - v1.0.0 - First release - Minor ~15% speed improvements compared to original 
  - v1.0.1 - Fixed pip packaging and added install steps. Exclude tests from pip
  - v1.0.2 - Fixed pip packaging issue
+ - v1.0.3 - Fixed divide by zero error when the ground truth is zero length (including evaluates to zero length since it's just whitespace)
 
 
 ## Tests
